@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  ufname: MyString
+  uminitial: MyString
+  ulastname: MyString
+  ptDob: MyString
+  pcp: MyString
+  pt_q1: MyString
+  pt_q2: MyString
+  pt_q3: MyString
+
+two:
+  id: MyString
+  ufname: MyString
+  uminitial: MyString
+  ulastname: MyString
+  ptDob: MyString
+  pcp: MyString
+  pt_q1: MyString
+  pt_q2: MyString
+  pt_q3: MyString

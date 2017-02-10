@@ -1,0 +1,2 @@
+class FhcnPatient < ApplicationRecord
+end
