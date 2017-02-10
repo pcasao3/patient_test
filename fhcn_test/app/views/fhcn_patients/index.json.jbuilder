@@ -1,0 +1,1 @@
+json.array! @fhcn_patients, partial: 'fhcn_patients/fhcn_patient', as: :fhcn_patient

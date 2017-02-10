@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fhcn Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fhcn_patients.each do |fhcn_patient| %>
+      <tr>
+        <td><%= link_to 'Show', fhcn_patient %></td>
+        <td><%= link_to 'Edit', edit_fhcn_patient_path(fhcn_patient) %></td>
+        <td><%= link_to 'Destroy', fhcn_patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fhcn Patient', new_fhcn_patient_path %>

@@ -1,0 +1,1 @@
+json.partial! "fhcn_patients_controllers/fhcn_patients_controller", fhcn_patients_controller: @fhcn_patients_controller

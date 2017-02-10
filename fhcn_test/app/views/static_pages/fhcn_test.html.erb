@@ -1,0 +1,37 @@
+<!-- style -->
+<style>
+	.req-box {margin: 20px;
+			  text-align: center;}
+</style>
+
+
+<!-- Header -->
+<a href="/fhcn_test" style="text-decoration:none;">
+	<div class="container">
+		<div class="jumbotron" style="text-align: center; background-color: #37C4CA; color: white;">
+			<h1>Patient Record Retrieval</h1>
+		</div>
+	</div>
+</a>
+
+<!-- Use: id, ufname, uminitial, ptDob, pcp, pt_q1, pt_q2, pt_q3 -->
+<% if @patient %>
+	<% if @patient.length == 0 %>
+		<%= render partial: 'warning' %>
+	<% elsif @patient.present? %>
+		<!-- Display information in a table -->
+		<%= render partial: 'get_patient', locals: { patient: @patient.first }  %>
+	<% end %>
+<% end %>
+
+<div class="req-box">
+	<p style="color: #FF6600">Please Enter the Patient's Account ID:</p>
+
+	<!-- Use simple form_tag to retrieve the patient's record -->
+	<%= form_tag fhcn_test_path, :method => 'get' do %>
+	  	<p>
+		    <%= text_field_tag :search, params[:search] %>
+		    <%= submit_tag "Search", :name => nil %>
+	  	</p>
+	<% end %>
+</div>

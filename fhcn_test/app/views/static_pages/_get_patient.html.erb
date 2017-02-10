@@ -1,0 +1,40 @@
+<style>
+	.q_hdr {text-style: bold;}
+</style>
+
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Account ID</th>
+				<th>First Name</th>
+				<th>Middle Initial</th>
+				<th>Date of Birth</th>
+				<th>PCP</th>
+				<th>New Patient?</th>
+				<th>Last Seen?</th>
+				<th>Prescription?</th>
+			</tr>
+			<tr>
+				<th><%= @patient.first.id %></th>
+				<th><%= @patient.first.ufname %></th>
+					<th><%= @patient.first.uminitial %></th>
+				<th><%= @patient.first.ptDob %></th>
+				<th><%= @patient.first.pcp %></th>
+				<th><%= @patient.first.pt_q1 %></th>
+				<th><%= @patient.first.pt_q2 %></th>
+				<th><%= @patient.first.pt_q3 %></th>
+			</tr>
+		</thead>
+	</table>
+
+	<% @fhcn_patient = @patient.first %>
+	<%= form_for @fhcn_patient, :html => { :style => 'line-height:2;' } do |f| %>
+		Is this a new patient?  <%= f.select :pt_q1, options_for_select(["Yes","No"]) %><br/>
+		When was the patient last seen?  <%= f.select :pt_q2, options_for_select(["< 1month","< 3months", "< 6months","> 6months"]) %><br/>
+		Does the patient require a prescription refill?  <%= f.select :pt_q3, options_for_select(["Yes","No"]) %><br/>
+		<br/>
+		<%= f.submit "Update Patient Record" %>
+	<% end %>
+
+</div>

@@ -1,0 +1,17 @@
+<%= form_for(fhcn_patient) do |f| %>
+  <% if fhcn_patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fhcn_patient.errors.count, "error") %> prohibited this fhcn_patient from being saved:</h2>
+
+      <ul>
+      <% fhcn_patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
