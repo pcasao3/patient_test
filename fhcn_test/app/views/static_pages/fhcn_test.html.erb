@@ -14,16 +14,6 @@
 	</div>
 </a>
 
-<!-- Use: id, ufname, uminitial, ptDob, pcp, pt_q1, pt_q2, pt_q3 -->
-<% if @patient %>
-	<% if @patient.length == 0 %>
-		<%= render partial: 'warning' %>
-	<% elsif @patient.present? %>
-		<!-- Display information in a table -->
-		<%= render partial: 'get_patient', locals: { patient: @patient.first }  %>
-	<% end %>
-<% end %>
-
 <div class="req-box">
 	<p style="color: #FF6600">Please Enter the Patient's Account ID:</p>
 
@@ -35,3 +25,13 @@
 	  	</p>
 	<% end %>
 </div>
+
+<!-- Use: id, ufname, uminitial, ptDob, pcp, pt_q1, pt_q2, pt_q3 -->
+<% if @patient %>
+	<% if @patient.length == 0 %>
+		<%= render partial: 'warning' %>
+	<% elsif @patient.present? %>
+		<!-- Display information in a table -->
+		<%= render partial: 'get_patient', locals: { patient: @patient.first }  %>
+	<% end %>
+<% end %>
